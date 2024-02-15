@@ -12,19 +12,18 @@ function closeModal() {
 
 function sendEmail(e) {
   e?.preventDefault()
+const{name, email, subject, message} = e.target
   const params = {
-    name: document.getElementById('name').value,
-    email: document.getElementById('email').value,
-    subject: document.getElementById('subject').value,
-    message: document.getElementById('message').value
+    name: name.value,
+    email: email.value,
+    subject: subject.value,
+    message: message.value
   }
 
   if (params.name && params.email && params.subject && params.message) {
-    emailjs.send('service_tk7ibzn', 'template_z85cct9', params).then(openModal())
+    emailjs.send( 'default_service','template_6z17o9i', params).then(openModal())
   }
-
 }
-
 closeButton.addEventListener('click', closeModal)
 formulario.addEventListener('submit', sendEmail)
 
