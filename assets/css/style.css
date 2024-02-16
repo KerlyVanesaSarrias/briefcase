@@ -78,7 +78,7 @@
 /* ============= BASE ============= */
 html {
   box-sizing: border-box;
-  scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 *,
@@ -125,9 +125,9 @@ img {
 
 
 .grid--container {
+  max-width: 1024px;
   display: grid;
   margin: 0 var(--mr-3);
-  justify-items: center;
 }
 
 .btn {
@@ -152,21 +152,9 @@ img {
 }
 
 .btn--primary {
-  background-color: #343a40;
+  background-color: #343a40 !important;
 }
 
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background-color: var(--bg-color-transparent);
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--aditional-shadow);
-  border-radius: 4px;
-}
 
 /* ============= Dark-Mode ============= */
 /* .dark-mode {
@@ -455,65 +443,11 @@ img {
     position: relative;
     padding: var(--header-height) 0 3rem;
 
-    .home__image {
-      width: clamp(min(320px, 100%), 75vw, 450px);
-      height: auto;
-      align-content: center;
-      border-bottom: 10px solid var(--color);
-      border-top: 10px solid var(--color);
-      border-left: 10px solid var(--color);
-      background-color: var(--bg-color-section1);
-    
-    }
-
-    .home__social {
-      position: absolute;
-      top: 20rem;
-      left: -0.8rem;
-      display: flex;
-      flex-direction: column;
-      row-gap: var(--mr-2);
-
-      .home__social-link {
-        color: #777;
-        font-size: 1.7rem;
-        transition: color .3s;
-        text-align: center;
-
-        &:hover {
-
-          color: var(--color-black);
-        }
-
-      }
-    }
-
     .home__info {
 
       .home__title,
       .home__description {
         text-align: justify;
-      }
-
-      .home__title {
-        margin: 0 auto;
-        text-transform: uppercase;
-        width: 32ch;
-        overflow: hidden;
-        font-weight: 700;
-        font-size: 40px;
-        text-transform: uppercase;
-      }
-      .home__title2 {
-        margin: 0 auto;
-        text-transform: uppercase;
-        border-right: 4px solid;
-        white-space: nowrap;
-        width: 45ch;
-        animation: typing 2s infinite steps(15) alternate,
-          blink .3s infinite step-end alternate;
-        overflow: hidden;
-        font-weight: 600;
       }
     }
 
@@ -857,13 +791,13 @@ img {
 
   .home {
     .home__container {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 2fr 1fr;
       grid-auto-rows: auto;
       display: grid;
       justify-items: center;
 
       .home__image {
-        width: clamp(min(375px, 100%), 48vw, 450px);
+        width: 100%;
         grid-column: 2/3;
         grid-row: 1/4;
 
@@ -895,13 +829,12 @@ img {
         flex-direction: column;
 
         .home__title {
-          margin-top: 8rem;
+          margin-top: 6rem;
         }
 
         .home__description {
           margin-top: 0;
           font-size: 1.3rem;
-          padding: 2rem;
         }
       }
 
@@ -1041,8 +974,6 @@ img {
   width: 100%;
   gap:1rem;
   padding: 0 100px;
-  margin: 20px;
-  flex-wrap: wrap;
 
   :hover {
     i {
@@ -1084,5 +1015,65 @@ img {
 .skill-item:hover {
   p {
     visibility: visible;
+  }
+}
+
+.home__info {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.home__title {
+  margin: 0 auto;
+  text-transform: uppercase;
+  width: 100%;
+  overflow: hidden;
+  font-weight: 700;
+  font-size: 32px;
+  text-transform: uppercase;
+}
+
+.home__title2 {
+  margin: 0 auto;
+  text-transform: uppercase;
+  border-right: 4px solid;
+  white-space: nowrap;
+  width: 45ch;
+  animation: typing 2s infinite steps(15) alternate,
+    blink .3s infinite step-end alternate;
+  overflow: hidden;
+  font-weight: 600;
+}
+
+.home__image {
+  width: 100%;
+  height: auto;
+  align-content: center;
+  border-bottom: 10px solid var(--color);
+  border-top: 10px solid var(--color);
+  border-left: 10px solid var(--color);
+  background-color: var(--bg-color-section1);
+}
+
+.home__social {
+  position: absolute;
+  top: 20rem;
+  left: -0.8rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--mr-2);
+
+  .home__social-link {
+    color: #777;
+    font-size: 1.7rem;
+    transition: color .3s;
+    text-align: center;
+
+    &:hover {
+
+      color: var(--color-black);
+    }
+
   }
 }
