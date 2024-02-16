@@ -1017,7 +1017,6 @@ img {
 
 .home__info {
   display: flex;
-  flex-direction: row;
   width: 100%;
 }
 
